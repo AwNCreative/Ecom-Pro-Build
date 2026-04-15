@@ -4,75 +4,75 @@ export default function TermsOfService() {
   return (
     <div className="w-full pt-12 pb-24 bg-background">
       <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl font-bold font-serif text-foreground mb-4">Terms of Service</h1>
-          <p className="text-muted-foreground mb-12">Last updated: October 24, 2026</p>
+          <h1 className="text-4xl font-black text-foreground mb-4">شروط الخدمة</h1>
+          <p className="text-muted-foreground mb-12">آخر تحديث: ٢٤ أكتوبر ٢٠٢٦</p>
 
-          <div className="prose prose-slate dark:prose-invert prose-headings:font-serif prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary max-w-none">
-            
+          <div className="prose prose-slate dark:prose-invert prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary max-w-none">
+
             <p>
-              These Terms of Service ("Terms") govern your access to and use of the A&N Creative website, digital products, and services. Please read these Terms carefully before using our website or purchasing our products.
+              تحكم شروط الخدمة هذه ("الشروط") وصولك إلى موقع A&N Creative واستخدامك له، بما يشمل المنتجات الرقمية والخدمات المقدمة. يُرجى قراءة هذه الشروط بعناية قبل استخدام موقعنا أو شراء منتجاتنا.
             </p>
 
-            <h2>1. Acceptance of Terms</h2>
+            <h2>١. قبول الشروط</h2>
             <p>
-              By accessing our website or purchasing our products, you agree to be bound by these Terms and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
+              بالوصول إلى موقعنا الإلكتروني أو شراء منتجاتنا، فإنك توافق على الالتزام بهذه الشروط وجميع القوانين واللوائح المعمول بها. إذا كنت لا توافق على أي من هذه الشروط، فمن المحظور عليك استخدام هذا الموقع أو الوصول إليه.
             </p>
 
-            <h2>2. Digital Products License</h2>
+            <h2>٢. ترخيص المنتجات الرقمية</h2>
             <p>
-              Upon purchasing a digital product from A&N Creative, you are granted a non-exclusive, non-transferable, revocable license to use the digital asset in accordance with the specific license purchased (e.g., Personal, Commercial, or Extended Commercial).
+              عند شراء منتج رقمي من A&N Creative، يُمنح لك ترخيص غير حصري وغير قابل للنقل وقابل للإلغاء لاستخدام الأصل الرقمي وفقاً للترخيص المحدد الذي تم شراؤه (مثل الشخصي أو التجاري أو التجاري الموسّع).
             </p>
             <p>
-              <strong>You may not:</strong>
+              <strong>لا يحق لك:</strong>
             </p>
             <ul>
-              <li>Resell, sublicense, or redistribute the source files.</li>
-              <li>Include the source files in an open-source project or repository.</li>
-              <li>Claim the original designs as your own work.</li>
-              <li>Use the assets to create a direct competitor to the original product.</li>
+              <li>إعادة بيع الملفات المصدرية أو ترخيصها من الباطن أو إعادة توزيعها.</li>
+              <li>تضمين الملفات المصدرية في مشروع أو مستودع مفتوح المصدر.</li>
+              <li>ادعاء ملكية التصاميم الأصلية باعتبارها من إبداعك.</li>
+              <li>استخدام الأصول لإنشاء منافس مباشر للمنتج الأصلي.</li>
             </ul>
 
-            <h2>3. Refund Policy</h2>
+            <h2>٣. سياسة الاسترداد</h2>
             <p>
-              Due to the nature of digital products, which cannot be returned once downloaded, <strong>all sales of digital products are final and non-refundable</strong>. We encourage you to carefully review the product descriptions and previews before making a purchase. If you experience technical issues with a file, please contact our support team for assistance.
+              نظراً لطبيعة المنتجات الرقمية التي لا يمكن إعادتها بمجرد تنزيلها، <strong>فإن جميع مبيعات المنتجات الرقمية نهائية وغير قابلة للاسترداد</strong>. نشجعك على مراجعة أوصاف المنتجات ومعاينتها بعناية قبل إجراء عملية الشراء. إذا واجهت مشاكل تقنية في ملف ما، يُرجى التواصل مع فريق الدعم للحصول على المساعدة.
             </p>
             <p>
-              For our consulting and design services, refund policies are outlined in the specific project proposals or service agreements signed prior to project commencement.
-            </p>
-
-            <h2>4. Intellectual Property</h2>
-            <p>
-              All content on this website, including but not limited to text, graphics, logos, images, digital products, and software, is the property of A&N Creative and is protected by international copyright laws.
+              بالنسبة لخدمات الاستشارات والتصميم لدينا، تُحدَّد سياسات الاسترداد في مقترحات المشاريع المحددة أو اتفاقيات الخدمة الموقّعة قبل بدء المشروع.
             </p>
 
-            <h2>5. Service Modifications and Pricing</h2>
+            <h2>٤. الملكية الفكرية</h2>
             <p>
-              Prices for our products and services are subject to change without notice. We reserve the right at any time to modify or discontinue any product or service without notice. We shall not be liable to you or to any third-party for any modification, price change, suspension, or discontinuance of the Service.
+              جميع المحتويات الموجودة على هذا الموقع، بما في ذلك على سبيل المثال لا الحصر: النصوص والرسومات والشعارات والصور والمنتجات الرقمية والبرمجيات، هي ملك لـ A&N Creative ومحمية بموجب قوانين حقوق النشر الدولية.
             </p>
 
-            <h2>6. Limitations of Liability</h2>
+            <h2>٥. تعديلات الخدمة والأسعار</h2>
             <p>
-              In no event shall A&N Creative or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website, even if A&N Creative has been notified orally or in writing of the possibility of such damage.
+              تخضع أسعار منتجاتنا وخدماتنا للتغيير دون إشعار مسبق. نحتفظ بالحق في أي وقت في تعديل أي منتج أو خدمة أو إيقافها دون إشعار. لن نكون مسؤولين تجاهك أو تجاه أي طرف ثالث عن أي تعديل أو تغيير في السعر أو تعليق أو إيقاف للخدمة.
             </p>
 
-            <h2>7. Governing Law</h2>
+            <h2>٦. حدود المسؤولية</h2>
             <p>
-              These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which A&N Creative operates, without regard to its conflict of law provisions.
+              لن تكون A&N Creative أو مورّدوها مسؤولين في أي حال من الأحوال عن أي أضرار (بما في ذلك، على سبيل المثال لا الحصر، الأضرار الناجمة عن فقدان البيانات أو الأرباح، أو بسبب انقطاع الأعمال) الناشئة عن استخدام أو عدم القدرة على استخدام المواد الموجودة على موقعنا، حتى لو أُبلغت A&N Creative شفهياً أو كتابياً بإمكانية وقوع مثل هذه الأضرار.
             </p>
 
-            <h2>8. Contact Information</h2>
+            <h2>٧. القانون الحاكم</h2>
             <p>
-              Questions about the Terms of Service should be sent to us at:
+              تخضع هذه الشروط وتُفسَّر وفقاً لقوانين الولاية القضائية التي تعمل فيها A&N Creative، بصرف النظر عن أحكام تعارض القوانين.
+            </p>
+
+            <h2>٨. معلومات التواصل</h2>
+            <p>
+              يُرجى إرسال الأسئلة المتعلقة بشروط الخدمة إلينا على:
               <br />
               <a href="mailto:legal@ancreative.com" className="font-medium hover:underline">legal@ancreative.com</a>
             </p>
-            
+
           </div>
         </motion.div>
 

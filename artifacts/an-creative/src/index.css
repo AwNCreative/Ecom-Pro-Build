@@ -114,8 +114,8 @@
   --chart-4: 0 0% 80%;
   --chart-5: 0 0% 40%;
 
-  --app-font-sans: 'Inter', system-ui, sans-serif;
-  --app-font-serif: Georgia, 'Times New Roman', serif;
+  --app-font-sans: 'Tajawal', system-ui, sans-serif;
+  --app-font-serif: 'Tajawal', Georgia, serif;
   --app-font-mono: Menlo, monospace;
   --radius: .5rem; /* 8px */
   --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00); 
