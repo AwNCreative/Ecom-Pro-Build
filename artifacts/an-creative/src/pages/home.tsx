@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, BookOpen, PenLine, Lightbulb } from "lucide-react";
+import { ArrowLeft, BookOpen, PenLine, Lightbulb, Mail, MessageCircle, Instagram } from "lucide-react";
 
 export default function Home() {
   const featuredProducts = [
@@ -166,6 +166,88 @@ export default function Home() {
               <Link href="/blog">المدونة</Link>
             </Button>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 bg-card border-t border-border/60">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl mx-auto text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-black text-foreground mb-4">
+              تواصل <span className="text-primary">معنا</span>
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              لديك سؤال؟ تريد الاستفسار عن منتج؟ نحن هنا وجاهزون للرد.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            {/* WhatsApp */}
+            <motion.a
+              href="https://wa.me/966572190784"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.05 }}
+              className="group flex flex-col items-center gap-4 p-7 rounded-2xl border border-border/50 bg-background hover:border-[#25D366]/40 hover:shadow-lg hover:shadow-[#25D366]/5 transition-all duration-300 cursor-pointer"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-[#25D366]/10 flex items-center justify-center group-hover:bg-[#25D366]/20 transition-colors">
+                <MessageCircle className="w-7 h-7 text-[#25D366]" />
+              </div>
+              <div className="text-center">
+                <p className="font-bold text-foreground mb-1">واتساب</p>
+                <p className="text-sm text-muted-foreground">ردود سريعة · مباشر</p>
+              </div>
+              <span className="text-sm font-semibold text-[#25D366]">ابدأ المحادثة</span>
+            </motion.a>
+
+            {/* Email */}
+            <motion.a
+              href="mailto:ahmedosamaqotyifan@gmail.com"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="group flex flex-col items-center gap-4 p-7 rounded-2xl border border-border/50 bg-background hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 cursor-pointer"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <Mail className="w-7 h-7 text-primary" />
+              </div>
+              <div className="text-center">
+                <p className="font-bold text-foreground mb-1">البريد الإلكتروني</p>
+                <p className="text-sm text-muted-foreground break-all">ahmedosamaqotyifan@gmail.com</p>
+              </div>
+              <span className="text-sm font-semibold text-primary">أرسل رسالة</span>
+            </motion.a>
+
+            {/* Instagram */}
+            <motion.a
+              href="https://www.instagram.com/a7m.r3?igsh=MTdrMTdrcHIyOTQycw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="group flex flex-col items-center gap-4 p-7 rounded-2xl border border-border/50 bg-background hover:border-pink-400/30 hover:shadow-lg hover:shadow-pink-500/5 transition-all duration-300 cursor-pointer"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-pink-500/10 flex items-center justify-center group-hover:bg-pink-500/20 transition-colors">
+                <Instagram className="w-7 h-7 text-pink-500" />
+              </div>
+              <div className="text-center">
+                <p className="font-bold text-foreground mb-1">إنستغرام</p>
+                <p className="text-sm text-muted-foreground">@a7m.r3</p>
+              </div>
+              <span className="text-sm font-semibold text-pink-500">تابعنا</span>
+            </motion.a>
+          </div>
         </div>
       </section>
     </div>
