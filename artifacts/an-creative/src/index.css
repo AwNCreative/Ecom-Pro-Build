@@ -288,3 +288,17 @@
     inset: -1px;
   }
 }
+
+.prose-arabic {
+  direction: rtl;
+  text-align: right;
+  line-height: 1.85;
+}
+
+.prose-arabic section h2 {
+  scroll-margin-top: 5rem;
+}
+
+.prose-arabic p {
+  line-height: 1.9;
+}

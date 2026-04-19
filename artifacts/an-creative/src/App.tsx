@@ -11,6 +11,13 @@ import Blog from "@/pages/blog";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
 
+import SmartFoundation from "@/pages/blog/smart-foundation";
+import UxPsychology from "@/pages/blog/ux-psychology";
+import ProductEngineering from "@/pages/blog/product-engineering";
+import TechArsenal from "@/pages/blog/tech-arsenal";
+import SalesMachine from "@/pages/blog/sales-machine";
+import AbsoluteLoyalty from "@/pages/blog/absolute-loyalty";
+
 const queryClient = new QueryClient();
 
 function Router() {
@@ -20,6 +27,12 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/store" component={Store} />
         <Route path="/blog" component={Blog} />
+        <Route path="/blog/smart-foundation" component={SmartFoundation} />
+        <Route path="/blog/ux-psychology" component={UxPsychology} />
+        <Route path="/blog/product-engineering" component={ProductEngineering} />
+        <Route path="/blog/tech-arsenal" component={TechArsenal} />
+        <Route path="/blog/sales-machine" component={SalesMachine} />
+        <Route path="/blog/absolute-loyalty" component={AbsoluteLoyalty} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="/terms-of-service" component={TermsOfService} />
         <Route component={NotFound} />

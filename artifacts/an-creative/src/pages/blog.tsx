@@ -7,66 +7,72 @@ import { ArrowLeft, Clock, BookOpen } from "lucide-react";
 const posts = [
   {
     id: 1,
-    title: "٥ أسرار لرفع مبيعات متجرك على سلة",
-    excerpt: "اكتشف الاستراتيجيات التي يستخدمها أصحاب المتاجر الناجحة لتحقيق أرقام مبيعات استثنائية. من تحسين صفحات المنتج إلى استخدام الكوبونات بذكاء، هذه الأسرار ستغير طريقة تفكيرك كلياً.",
+    title: "التأسيس الذكي – هندسة المتجر من الصفر",
+    excerpt: "قبل أن تضيف أول منتج، عليك أن تبني الأرضية الصحيحة. اكتشف كيف تُهيّئ متجرك باحترافية من أول يوم — الهوية، الهيكل، الدفع، والإطلاق الصحيح.",
     date: "١٥ أبريل ٢٠٢٦",
-    readTime: "٥ دقائق",
+    readTime: "٨ دقائق",
     category: "التجارة الإلكترونية",
+    href: "/blog/smart-foundation",
     featured: true,
   },
   {
     id: 2,
-    title: "كيف تكتب وصف منتج يُقنع الزائر بالشراء؟",
-    excerpt: "فن كتابة وصف المنتج هو المهارة الأكثر تأثيراً في تحويل الزوار إلى مشترين. تعلّم الصيغة التي يستخدمها المحترفون لكتابة أوصاف تبيع.",
+    title: "سيكولوجية الواجهة – كيف تبني متجراً يبيع؟",
+    excerpt: "في أقل من 50 ميلي ثانية يحكم الزائر على متجرك. تعلّم كيف تستخدم علم النفس البصري لتحويل الزوار إلى مشترين قبل أن يقرأوا كلمة واحدة.",
     date: "١٠ أبريل ٢٠٢٦",
     readTime: "٧ دقائق",
-    category: "كتابة المحتوى",
+    category: "تجربة المستخدم",
+    href: "/blog/ux-psychology",
     featured: false,
   },
   {
     id: 3,
-    title: "دليل SEO الكامل لمتاجر سلة",
-    excerpt: "تعلّم كيف تُحسّن ظهور متجرك في نتائج البحث وتجذب زيارات مجانية مستهدفة. خطوات عملية يمكنك تطبيقها اليوم دون خبرة تقنية مسبقة.",
+    title: "هندسة المنتجات – فن الوصف وترتيب التصنيفات",
+    excerpt: "صفحة المنتج هي مندوب مبيعاتك الصامت. اكتشف صيغة الوصف الذي يبيع، وكيف ترتّب منتجاتك لرفع متوسط الطلب.",
     date: "٥ أبريل ٢٠٢٦",
-    readTime: "١٠ دقائق",
-    category: "تحسين محركات البحث",
+    readTime: "٩ دقائق",
+    category: "كتابة المحتوى",
+    href: "/blog/product-engineering",
     featured: false,
   },
   {
     id: 4,
-    title: "سيكولوجية التسعير: كيف تسعّر منتجاتك بذكاء؟",
-    excerpt: "الأسعار ليست مجرد أرقام — إنها رسائل نفسية لعميلك. اكتشف كيف يتخذ العملاء قرار الشراء وكيف تضع أسعارك بما يُعظّم أرباحك.",
+    title: "الترسانة التقنية – الربط الذكي وعصر الـ Data",
+    excerpt: "المتجر الذي يفهم أرقامه يتفوّق دائماً على الذي يعمل بالحدس. دليلك لربط Analytics وPixel وواتساب وشحن احترافي.",
     date: "١ أبريل ٢٠٢٦",
-    readTime: "٦ دقائق",
-    category: "التسويق",
+    readTime: "١٠ دقائق",
+    category: "الأدوات والتقنية",
+    href: "/blog/tech-arsenal",
     featured: false,
   },
   {
     id: 5,
-    title: "أفضل إضافات سلة التي ستوفّر عليك ساعات من العمل",
-    excerpt: "مراجعة شاملة لأقوى إضافات منصة سلة التي يستخدمها أصحاب المتاجر الناجحة لأتمتة عملياتهم وتوفير وقتهم.",
+    title: "ماكينة المبيعات – الكوبونات والسلات المتروكة",
+    excerpt: "٧٠٪ من المتسوقين يتركون سلّتهم دون شراء. تعلّم كيف تستردّ هذه الأموال بنظام استعادة مُثبت وكوبونات تُحرّك القرار.",
     date: "٢٨ مارس ٢٠٢٦",
     readTime: "٨ دقائق",
-    category: "الأدوات والتقنية",
+    category: "التسويق",
+    href: "/blog/sales-machine",
     featured: false,
   },
   {
     id: 6,
-    title: "كيف تبني خدمة عملاء تُحوّل المشترين إلى سفراء لعلامتك؟",
-    excerpt: "خدمة العملاء الاستثنائية ليست تكلفة — إنها استثمار في أعلى عوائد. اكتشف النظام الذي يجعل عملاءك يعودون ويُوصون بك.",
+    title: "الولاء المطلق – خدمة العملاء والتحويل لمسوّقين",
+    excerpt: "العميل الراضي يشتري مرة. العميل المتعلّق بعلامتك يشتري دائماً ويُحضر أصدقاءه. اكتشف نظام الولاء الذي يحوّل عملاءك إلى سفراء.",
     date: "٢٢ مارس ٢٠٢٦",
     readTime: "٩ دقائق",
     category: "خدمة العملاء",
+    href: "/blog/absolute-loyalty",
     featured: false,
   },
 ];
 
 const categoryColors: Record<string, string> = {
   "التجارة الإلكترونية": "bg-rose-100 text-rose-700 border-rose-200",
-  "كتابة المحتوى": "bg-violet-100 text-violet-700 border-violet-200",
-  "تحسين محركات البحث": "bg-blue-100 text-blue-700 border-blue-200",
-  "التسويق": "bg-amber-100 text-amber-700 border-amber-200",
+  "تجربة المستخدم": "bg-violet-100 text-violet-700 border-violet-200",
+  "كتابة المحتوى": "bg-blue-100 text-blue-700 border-blue-200",
   "الأدوات والتقنية": "bg-emerald-100 text-emerald-700 border-emerald-200",
+  "التسويق": "bg-amber-100 text-amber-700 border-amber-200",
   "خدمة العملاء": "bg-cyan-100 text-cyan-700 border-cyan-200",
 };
 
@@ -103,42 +109,44 @@ export default function Blog() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-12"
           >
-            <Card className="overflow-hidden border-border/50 hover:border-primary/30 hover:shadow-xl transition-all duration-300 group cursor-pointer">
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="bg-gradient-to-br from-primary/15 via-primary/8 to-background min-h-[280px] flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute top-6 start-6">
-                    <Badge className="bg-primary text-primary-foreground text-xs">مقال مميز</Badge>
+            <Link href={featured.href}>
+              <Card className="overflow-hidden border-border/50 hover:border-primary/30 hover:shadow-xl transition-all duration-300 group cursor-pointer">
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                  <div className="bg-gradient-to-br from-primary/15 via-primary/8 to-background min-h-[280px] flex items-center justify-center relative overflow-hidden">
+                    <div className="absolute top-6 start-6">
+                      <Badge className="bg-primary text-primary-foreground text-xs">مقال مميز</Badge>
+                    </div>
+                    <div className="text-center px-8">
+                      <BookOpen className="w-20 h-20 text-primary/40 mx-auto group-hover:scale-110 group-hover:text-primary/70 transition-all duration-500" />
+                    </div>
                   </div>
-                  <div className="text-center px-8">
-                    <BookOpen className="w-20 h-20 text-primary/40 mx-auto group-hover:scale-110 group-hover:text-primary/70 transition-all duration-500" />
+                  <div className="p-8 md:p-10 flex flex-col justify-center">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${categoryColors[featured.category] || ''}`}>
+                        {featured.category}
+                      </span>
+                      <span className="text-muted-foreground text-xs flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        {featured.readTime} للقراءة
+                      </span>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-black text-foreground mb-4 leading-snug group-hover:text-primary transition-colors">
+                      {featured.title}
+                    </h2>
+                    <p className="text-muted-foreground leading-relaxed mb-6">
+                      {featured.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-muted-foreground">{featured.date}</span>
+                      <span className="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                        اقرأ المقال
+                        <ArrowLeft className="w-4 h-4" />
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <div className="p-8 md:p-10 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${categoryColors[featured.category] || ''}`}>
-                      {featured.category}
-                    </span>
-                    <span className="text-muted-foreground text-xs flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      {featured.readTime} للقراءة
-                    </span>
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-black text-foreground mb-4 leading-snug group-hover:text-primary transition-colors">
-                    {featured.title}
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    {featured.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-muted-foreground">{featured.date}</span>
-                    <Link href="/blog" className="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
-                      اقرأ المقال
-                      <ArrowLeft className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            </Link>
           </motion.div>
         )}
 
@@ -151,35 +159,37 @@ export default function Blog() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.07 }}
             >
-              <Card className="h-full flex flex-col border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group cursor-pointer overflow-hidden">
-                <div className="h-36 bg-gradient-to-br from-primary/8 to-muted/40 flex items-center justify-center border-b border-border/50">
-                  <BookOpen className="w-12 h-12 text-primary/30 group-hover:scale-110 group-hover:text-primary/60 transition-all duration-500" />
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className={`text-xs font-semibold px-2 py-0.5 rounded-full border ${categoryColors[post.category] || ''}`}>
-                      {post.category}
-                    </span>
-                    <span className="text-muted-foreground text-xs flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      {post.readTime}
-                    </span>
+              <Link href={post.href}>
+                <Card className="h-full flex flex-col border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group cursor-pointer overflow-hidden">
+                  <div className="h-36 bg-gradient-to-br from-primary/8 to-muted/40 flex items-center justify-center border-b border-border/50">
+                    <BookOpen className="w-12 h-12 text-primary/30 group-hover:scale-110 group-hover:text-primary/60 transition-all duration-500" />
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors flex-1">
-                    {post.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 mb-5">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/40">
-                    <span className="text-xs text-muted-foreground">{post.date}</span>
-                    <Link href="/blog" className="flex items-center gap-1.5 text-primary text-sm font-medium group-hover:gap-2.5 transition-all">
-                      اقرأ المزيد
-                      <ArrowLeft className="w-3.5 h-3.5" />
-                    </Link>
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className={`text-xs font-semibold px-2 py-0.5 rounded-full border ${categoryColors[post.category] || ''}`}>
+                        {post.category}
+                      </span>
+                      <span className="text-muted-foreground text-xs flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        {post.readTime}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors flex-1">
+                      {post.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 mb-5">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/40">
+                      <span className="text-xs text-muted-foreground">{post.date}</span>
+                      <span className="flex items-center gap-1.5 text-primary text-sm font-medium group-hover:gap-2.5 transition-all">
+                        اقرأ المقال
+                        <ArrowLeft className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </Link>
             </motion.div>
           ))}
         </div>
