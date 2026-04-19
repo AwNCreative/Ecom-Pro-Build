@@ -41,36 +41,32 @@ function ProductCard() {
       className="bg-card border border-border/50 rounded-2xl overflow-hidden hover:border-primary/30 hover:shadow-xl transition-all duration-300"
     >
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
-        {/* Left/Start: Product Visual */}
-        <div className="lg:col-span-2 bg-gradient-to-br from-primary/10 via-primary/5 to-background p-10 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-s border-border/50 min-h-[300px] relative">
-          <div className="absolute top-4 start-4">
+        {/* Image Panel */}
+        <div className="lg:col-span-2 relative border-b lg:border-b-0 lg:border-s border-border/50 min-h-[340px] lg:min-h-[560px]">
+          <div className="absolute top-4 start-4 z-10">
             <Badge className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1">الأكثر مبيعاً</Badge>
           </div>
-          <div className="w-28 h-28 rounded-2xl bg-primary/15 flex items-center justify-center mb-6 shadow-lg">
-            <ShoppingBag className="w-14 h-14 text-primary" />
-          </div>
-          <h2 className="text-2xl font-black text-foreground text-center mb-2">أسرار منصة سلة</h2>
-          <p className="text-muted-foreground text-sm text-center">دليل رقمي شامل</p>
-
-          {/* Pricing */}
-          <div className="mt-8 text-center">
-            <p className="text-muted-foreground line-through text-base mb-1">$12</p>
-            <p className="text-5xl font-black text-primary">$10</p>
-            <p className="text-xs text-muted-foreground mt-1">وصول فوري للتحميل</p>
-          </div>
-
-          <Button size="lg" className="mt-6 w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full h-14 text-base font-bold shadow-md shadow-primary/20 transition-all hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5">
-            <ShoppingBag className="w-5 h-5 ms-2" />
-            اشترِ الآن
-          </Button>
-          <p className="text-xs text-muted-foreground mt-3 flex items-center gap-1 justify-center">
-            <Lock className="w-3 h-3" />
-            دفع آمن ومشفّر
-          </p>
+          <img
+            src="/product-salla.jpg"
+            alt="أسرار منصة سلة"
+            className="w-full h-full object-cover absolute inset-0"
+          />
         </div>
 
         {/* Right/End: Product Details */}
-        <div className="lg:col-span-3 p-8 md:p-10">
+        <div className="lg:col-span-3 p-8 md:p-10 flex flex-col">
+          {/* Title & Pricing */}
+          <div className="flex items-start justify-between gap-4 mb-6">
+            <div>
+              <h2 className="text-2xl font-black text-foreground mb-1">أسرار منصة سلة</h2>
+              <p className="text-muted-foreground text-sm">دليل رقمي شامل</p>
+            </div>
+            <div className="text-start shrink-0">
+              <p className="text-muted-foreground line-through text-sm mb-0.5">$12</p>
+              <p className="text-3xl font-black text-primary leading-none">$10</p>
+            </div>
+          </div>
+
           <p className="text-muted-foreground text-base leading-relaxed mb-8">
             خريطتك الذهبية للانتقال بمتجرك من مجرد صفحة عادية إلى منصة احترافية تحقق مبيعات. اختصرنا لك سنوات من الخبرة والتجارب في دليل واحد يضع بين يديك "الخلاصة" لإدارة متجرك بذكاء.
           </p>
@@ -116,6 +112,18 @@ function ProductCard() {
                 </AccordionItem>
               ))}
             </Accordion>
+          </div>
+
+          {/* Buy Button */}
+          <div className="mt-auto pt-6">
+            <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full h-14 text-base font-bold shadow-md shadow-primary/20 transition-all hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5">
+              <ShoppingBag className="w-5 h-5 ms-2" />
+              اشترِ الآن — $10
+            </Button>
+            <p className="text-xs text-muted-foreground mt-3 flex items-center gap-1 justify-center">
+              <Lock className="w-3 h-3" />
+              دفع آمن ومشفّر · وصول فوري للتحميل
+            </p>
           </div>
         </div>
       </div>

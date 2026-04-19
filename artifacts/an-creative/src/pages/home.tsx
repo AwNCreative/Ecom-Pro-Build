@@ -74,8 +74,14 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <Card className="h-full border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 group bg-background">
-                  <div className="aspect-[4/3] bg-muted/50 rounded-t-lg overflow-hidden relative flex items-center justify-center border-b border-border/50">
-                    <ShoppingBag className="w-12 h-12 text-muted-foreground/30 group-hover:scale-110 transition-transform duration-500" />
+                  <div className="aspect-[4/3] bg-muted/50 rounded-t-lg overflow-hidden relative border-b border-border/50">
+                    {product.id === 1 ? (
+                      <img src="/product-salla.jpg" alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <ShoppingBag className="w-12 h-12 text-muted-foreground/30" />
+                      </div>
+                    )}
                   </div>
                   <CardHeader>
                     <div className="flex justify-between items-start mb-2">
