@@ -3,12 +3,12 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, ShoppingBag, BookOpen, PenLine, Lightbulb } from "lucide-react";
+import { ArrowLeft, BookOpen, PenLine, Lightbulb } from "lucide-react";
 
 export default function Home() {
   const featuredProducts = [
     { id: 1, name: "أسرار منصة سلة", price: "١٠$", originalPrice: "١٢$", desc: "خريطتك الذهبية للانتقال بمتجرك من مجرد صفحة عادية إلى منصة احترافية تحقق مبيعات." },
-    { id: 2, name: "دليل التسويق الرقمي", price: "قريباً", desc: "دليل شامل لبناء استراتيجية تسويقية متكاملة لمتجرك الإلكتروني." },
+    { id: 2, name: "دليل أسرار المنتج الرابح", price: "٧$", originalPrice: "١٠$", desc: 'الفلتر الذي تحتاجه لاختيار منتجات تبيع نفسها بنفسها وتجذب العملاء من النظرة الأولى.' },
   ];
 
   const blogPreviews = [
@@ -75,13 +75,11 @@ export default function Home() {
               >
                 <Card className="h-full border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 group bg-background">
                   <div className="aspect-[4/3] bg-muted/50 rounded-t-lg overflow-hidden relative border-b border-border/50">
-                    {product.id === 1 ? (
-                      <img src="/product-salla.jpg" alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <ShoppingBag className="w-12 h-12 text-muted-foreground/30" />
-                      </div>
-                    )}
+                    <img
+                      src={product.id === 1 ? "/product-salla.jpg" : "/product-winning.jpg"}
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
                   <CardHeader>
                     <div className="flex justify-between items-start mb-2">
