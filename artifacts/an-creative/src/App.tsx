@@ -7,7 +7,7 @@ import { Layout } from "@/components/layout/Layout";
 
 import Home from "@/pages/home";
 import Store from "@/pages/store";
-import Services from "@/pages/services";
+import Blog from "@/pages/blog";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
 
@@ -19,7 +19,7 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/store" component={Store} />
-        <Route path="/services" component={Services} />
+        <Route path="/blog" component={Blog} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="/terms-of-service" component={TermsOfService} />
         <Route component={NotFound} />

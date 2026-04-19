@@ -10,7 +10,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const navLinks = [
     { label: "الرئيسية", href: "/" },
     { label: "المتجر", href: "/store" },
-    { label: "الخدمات", href: "/services" },
+    { label: "المدونة", href: "/blog" },
   ];
 
   return (
@@ -103,7 +103,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-3">
                 <li><Link href="/" className="text-muted-foreground hover:text-primary transition-colors">الرئيسية</Link></li>
                 <li><Link href="/store" className="text-muted-foreground hover:text-primary transition-colors">المتجر</Link></li>
-                <li><Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">الخدمات</Link></li>
+                <li><Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors">المدونة</Link></li>
               </ul>
             </div>
 

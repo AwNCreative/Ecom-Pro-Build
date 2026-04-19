@@ -1,75 +1,153 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ShoppingBag, Star, LayoutGrid, Palette, Type, ArrowLeft } from "lucide-react";
+import { ShoppingBag, CheckCircle2, ChevronDown, Lock, TrendingUp, Search, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-const products = [
+const chapters = [
+  { id: "ch1", title: "الفصل الأول: التأسيس الذكي", subtitle: "هندسة المتجر من الصفر." },
+  { id: "ch2", title: "الفصل الثاني: سيكولوجية الواجهة", subtitle: 'كيف تبني متجراً "يبيع"؟' },
+  { id: "ch3", title: "الفصل الثالث: هندسة المنتجات", subtitle: "فن الوصف وترتيب التصنيفات." },
+  { id: "ch4", title: "الفصل الرابع: الترسانة التقنية", subtitle: "الربط الذكي وعصر الـ Data." },
+  { id: "ch5", title: "الفصل الخامس: ماكينة المبيعات", subtitle: "الكوبونات والسلات المتروكة." },
+  { id: "ch6", title: "الفصل السادس: الولاء المطلق", subtitle: "خدمة العملاء." },
+];
+
+const features = [
   {
-    id: 1,
-    name: "مجموعة تصميم الشعار",
-    price: "٤٩$",
-    desc: "قوالب شعارات احترافية للعلامات التجارية الحديثة. تشمل أكثر من ٥٠ شكلاً متجهياً وتوصيات خطوط ولوحات ألوان.",
-    icon: Star,
-    category: "الهوية"
+    icon: TrendingUp,
+    title: "إعدادات الخبراء",
+    desc: "ضبط المتجر لرفع نسبة تحويل الزوار (Conversion Rate)."
   },
   {
-    id: 2,
-    name: "قالب دليل العلامة التجارية",
-    price: "٧٩$",
-    desc: "قوالب InDesign وFigma شاملة لتقديم هويات العلامات التجارية للعملاء. أكثر من ٣٠ صفحة مصممة بدقة متناهية.",
-    icon: Palette,
-    category: "العرض"
+    icon: ShoppingBag,
+    title: "تحسين تجربة العميل",
+    desc: "أسرار ترتيب الأقسام لتسهيل الشراء."
   },
   {
-    id: 3,
-    name: "حزمة محتوى التواصل الاجتماعي",
-    price: "٣٩$",
-    desc: "أكثر من ١٠٠ قالب قابل للتخصيص لمنشورات وقصص وسائل التواصل الاجتماعي مصممة لزيادة التفاعل على إنستغرام ولينكد إن.",
-    icon: LayoutGrid,
-    category: "اجتماعي"
-  },
-  {
-    id: 4,
-    name: "مكتبة مكونات واجهة المستخدم",
-    price: "١٢٩$",
-    desc: "مكونات React متميزة مخصصة للوحات التحكم وتطبيقات SaaS. مبنية باستخدام Tailwind CSS وعناصر Radix UI الأساسية.",
-    icon: LayoutGrid,
-    category: "ويب"
-  },
-  {
-    id: 5,
-    name: "قالب عرض الاستثمار",
-    price: "٥٩$",
-    desc: "قوالب Keynote وPowerPoint مقنعة ومنظمة بشكل جميل لمساعدتك في تأمين جولة التمويل القادمة.",
-    icon: Star,
-    category: "أعمال"
-  },
-  {
-    id: 6,
-    name: "حزمة مجموعة الأيقونات",
-    price: "٢٩$",
-    desc: "أكثر من ٥٠٠ أيقونة مخصصة بخطوط وأشكال صلبة لواجهات الويب والجوال. متاحة بصيغ SVG وFigma ومكونات React.",
-    icon: Palette,
-    category: "أصول"
-  },
-  {
-    id: 7,
-    name: "حزمة الطباعة",
-    price: "٣٥$",
-    desc: "مجموعة منتقاة من أزواج الخطوط ومقاييس التخطيط المحسّنة لسهولة القراءة والتأثير الجمالي.",
-    icon: Type,
-    category: "أصول"
-  },
-  {
-    id: 8,
-    name: "لوحات الألوان الاحترافية",
-    price: "٢٥$",
-    desc: "١٠٠ لوحة ألوان متناسقة مختبرة للامتثال لمعايير WCAG. قابلة للتصدير إلى CSS وSCSS وFigma.",
-    icon: Palette,
-    category: "أصول"
+    icon: Search,
+    title: "SEO سلة",
+    desc: "الظهور في نتائج البحث الأولى مجاناً."
   },
 ];
+
+function ProductCard() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="bg-card border border-border/50 rounded-2xl overflow-hidden hover:border-primary/30 hover:shadow-xl transition-all duration-300"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
+        {/* Left/Start: Product Visual */}
+        <div className="lg:col-span-2 bg-gradient-to-br from-primary/10 via-primary/5 to-background p-10 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-s border-border/50 min-h-[300px] relative">
+          <div className="absolute top-4 start-4">
+            <Badge className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1">الأكثر مبيعاً</Badge>
+          </div>
+          <div className="w-28 h-28 rounded-2xl bg-primary/15 flex items-center justify-center mb-6 shadow-lg">
+            <ShoppingBag className="w-14 h-14 text-primary" />
+          </div>
+          <h2 className="text-2xl font-black text-foreground text-center mb-2">أسرار منصة سلة</h2>
+          <p className="text-muted-foreground text-sm text-center">دليل رقمي شامل</p>
+
+          {/* Pricing */}
+          <div className="mt-8 text-center">
+            <p className="text-muted-foreground line-through text-base mb-1">$12</p>
+            <p className="text-5xl font-black text-primary">$10</p>
+            <p className="text-xs text-muted-foreground mt-1">وصول فوري للتحميل</p>
+          </div>
+
+          <Button size="lg" className="mt-6 w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full h-14 text-base font-bold shadow-md shadow-primary/20 transition-all hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5">
+            <ShoppingBag className="w-5 h-5 ms-2" />
+            اشترِ الآن
+          </Button>
+          <p className="text-xs text-muted-foreground mt-3 flex items-center gap-1 justify-center">
+            <Lock className="w-3 h-3" />
+            دفع آمن ومشفّر
+          </p>
+        </div>
+
+        {/* Right/End: Product Details */}
+        <div className="lg:col-span-3 p-8 md:p-10">
+          <p className="text-muted-foreground text-base leading-relaxed mb-8">
+            خريطتك الذهبية للانتقال بمتجرك من مجرد صفحة عادية إلى منصة احترافية تحقق مبيعات. اختصرنا لك سنوات من الخبرة والتجارب في دليل واحد يضع بين يديك "الخلاصة" لإدارة متجرك بذكاء.
+          </p>
+
+          {/* Features */}
+          <div className="mb-8">
+            <h3 className="text-sm font-bold text-foreground uppercase tracking-widest mb-5 text-muted-foreground">ماذا ستتعلم؟</h3>
+            <div className="space-y-4">
+              {features.map((feature, i) => (
+                <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-muted/40 hover:bg-muted/70 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <feature.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-foreground text-sm mb-0.5">{feature.title}</p>
+                    <p className="text-muted-foreground text-sm">{feature.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Table of Contents Accordion */}
+          <div>
+            <h3 className="text-sm font-bold text-foreground uppercase tracking-widest mb-4 text-muted-foreground">محتويات الدليل</h3>
+            <Accordion type="single" collapsible className="w-full border border-border/50 rounded-xl overflow-hidden">
+              {chapters.map((chapter, i) => (
+                <AccordionItem key={chapter.id} value={chapter.id} className="border-border/50 last:border-b-0">
+                  <AccordionTrigger className="px-4 py-3 text-right hover:no-underline hover:bg-muted/40 text-sm font-semibold text-foreground [&[data-state=open]]:text-primary [&[data-state=open]]:bg-primary/5">
+                    <span className="flex items-center gap-3">
+                      <span className="w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center shrink-0">
+                        {i + 1}
+                      </span>
+                      {chapter.title}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-4 pb-3 text-muted-foreground text-sm">
+                    <div className="flex items-center gap-2 mt-1">
+                      <CheckCircle2 className="w-4 h-4 text-primary/60 shrink-0" />
+                      {chapter.subtitle}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function ComingSoonCard() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.15 }}
+      className="bg-card border border-dashed border-border/70 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300 relative"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/3 to-transparent pointer-events-none" />
+      <div className="flex flex-col items-center justify-center py-20 px-8 text-center">
+        <div className="w-20 h-20 rounded-2xl bg-muted flex items-center justify-center mb-6">
+          <Clock className="w-10 h-10 text-muted-foreground/50" />
+        </div>
+        <Badge variant="outline" className="mb-4 text-primary border-primary/30 text-xs px-3">قريباً</Badge>
+        <h3 className="text-2xl font-black text-foreground mb-3">المنتج القادم</h3>
+        <p className="text-muted-foreground max-w-sm text-base leading-relaxed">
+          نعمل على إعداد دليل متخصص جديد سيُغير طريقة تفكيرك في تنمية متجرك الإلكتروني. ترقّب!
+        </p>
+        <Button variant="outline" size="lg" className="mt-8 rounded-full px-8 border-border/60 hover:bg-muted">
+          أعلمني عند الإطلاق
+        </Button>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Store() {
   return (
@@ -77,62 +155,26 @@ export default function Store() {
       <div className="container mx-auto px-4 md:px-6">
 
         {/* Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-14">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             <Badge variant="outline" className="mb-4 text-primary border-primary/30">أصول رقمية</Badge>
-            <h1 className="text-4xl md:text-5xl font-black text-foreground mb-6">
-              أدوات للمبدعين <span className="text-primary italic">.</span>
+            <h1 className="text-4xl md:text-5xl font-black text-foreground mb-5">
+              أدواتك لتحقيق <span className="text-primary">النجاح.</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              منتجات رقمية راقية وقوالب وحزم واجهات مستخدم مصممة لتسريع سير عملك والارتقاء بنتائجك النهائية.
+              أدلة رقمية متخصصة وموثوقة، كتبها متخصصون بناءً على تجارب حقيقية وأرقام واضحة.
             </p>
           </motion.div>
         </div>
 
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {products.map((product, i) => (
-            <motion.div
-              key={product.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="h-full"
-            >
-              <Card className="h-full flex flex-col border-border/50 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-card overflow-hidden group">
-                <div className="h-48 bg-muted/40 relative flex items-center justify-center border-b border-border/50 p-6 overflow-hidden">
-                  <div className="absolute top-4 right-4">
-                    <Badge variant="secondary" className="bg-background/80 backdrop-blur text-xs">
-                      {product.category}
-                    </Badge>
-                  </div>
-                  <product.icon className="w-16 h-16 text-primary/40 group-hover:scale-110 group-hover:text-primary/60 transition-all duration-500" />
-                </div>
-
-                <CardHeader className="flex-1 pb-4">
-                  <div className="flex justify-between items-start gap-4 mb-2">
-                    <CardTitle className="text-lg leading-tight">{product.name}</CardTitle>
-                    <span className="font-bold text-foreground text-lg shrink-0">{product.price}</span>
-                  </div>
-                  <CardDescription className="text-sm leading-relaxed">
-                    {product.desc}
-                  </CardDescription>
-                </CardHeader>
-
-                <CardFooter className="pt-0">
-                  <Button className="w-full bg-foreground text-background hover:bg-primary transition-colors group/btn">
-                    <ShoppingBag className="w-4 h-4 ms-2" />
-                    اشترِ الآن
-                    <ArrowLeft className="w-4 h-4 me-auto opacity-0 translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all" />
-                  </Button>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
+        {/* Products */}
+        <div className="flex flex-col gap-8">
+          <ProductCard />
+          <ComingSoonCard />
         </div>
 
       </div>

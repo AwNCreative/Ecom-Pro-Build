@@ -3,19 +3,18 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, ShoppingBag, PenTool, Layers, MonitorPlay } from "lucide-react";
+import { ArrowLeft, ShoppingBag, BookOpen, PenLine, Lightbulb } from "lucide-react";
 
 export default function Home() {
   const featuredProducts = [
-    { id: 1, name: "مجموعة تصميم الشعار", price: "٤٩$", desc: "قوالب شعارات احترافية للعلامات التجارية الحديثة." },
-    { id: 2, name: "قالب دليل العلامة التجارية", price: "٧٩$", desc: "قوالب InDesign/Figma شاملة لتقديم هوية العلامة التجارية." },
-    { id: 3, name: "مكتبة مكونات واجهة المستخدم", price: "١٢٩$", desc: "مكونات React متميزة للوحات التحكم وتطبيقات SaaS." },
+    { id: 1, name: "أسرار منصة سلة", price: "١٠$", originalPrice: "١٢$", desc: "خريطتك الذهبية للانتقال بمتجرك من مجرد صفحة عادية إلى منصة احترافية تحقق مبيعات." },
+    { id: 2, name: "دليل التسويق الرقمي", price: "قريباً", desc: "دليل شامل لبناء استراتيجية تسويقية متكاملة لمتجرك الإلكتروني." },
   ];
 
-  const featuredServices = [
-    { id: 1, name: "تصميم الهوية البصرية", icon: PenTool, desc: "نبتكر هويات بصرية لا تُنسى من الصفر تعكس روح علامتك التجارية." },
-    { id: 2, name: "تصميم وتطوير المواقع", icon: MonitorPlay, desc: "مواقع إلكترونية عالية الأداء مصممة لتحقيق أعلى معدلات التحويل." },
-    { id: 3, name: "استراتيجية التواصل الاجتماعي", icon: Layers, desc: "استراتيجيات محتوى تُشرك جمهورك وتُنمّي حضورك الرقمي." },
+  const blogPreviews = [
+    { id: 1, icon: Lightbulb, title: "٥ أسرار لرفع مبيعات متجرك على سلة", date: "١٥ أبريل ٢٠٢٦", excerpt: "اكتشف الاستراتيجيات التي يستخدمها أصحاب المتاجر الناجحة لتحقيق أرقام مبيعات استثنائية." },
+    { id: 2, icon: PenLine, title: "كيف تكتب وصف منتج يُقنع الزائر بالشراء؟", date: "١٠ أبريل ٢٠٢٦", excerpt: "فن كتابة وصف المنتج هو المهارة الأكثر تأثيراً في تحويل الزوار إلى مشترين." },
+    { id: 3, icon: BookOpen, title: "دليل SEO الكامل لمتاجر سلة", date: "٥ أبريل ٢٠٢٦", excerpt: "تعلّم كيف تُحسّن ظهور متجرك في نتائج البحث وتجذب زيارات مجانية مستهدفة." },
   ];
 
   return (
@@ -41,13 +40,11 @@ export default function Home() {
                 <Link href="/store">استكشف متجرنا</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full px-8 text-base h-14 w-full sm:w-auto border-border/60 hover:bg-muted">
-                <Link href="/services">عرض الخدمات</Link>
+                <Link href="/blog">المدونة</Link>
               </Button>
             </div>
           </motion.div>
         </div>
-
-        {/* Abstract background shape */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
       </section>
 
@@ -67,7 +64,7 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
             {featuredProducts.map((product, i) => (
               <motion.div
                 key={product.id}
@@ -83,7 +80,12 @@ export default function Home() {
                   <CardHeader>
                     <div className="flex justify-between items-start mb-2">
                       <CardTitle className="text-xl">{product.name}</CardTitle>
-                      <span className="font-medium text-primary bg-primary/10 px-2 py-1 rounded text-sm">{product.price}</span>
+                      <div className="text-left">
+                        {product.originalPrice && (
+                          <span className="text-xs text-muted-foreground line-through block text-start">{product.originalPrice}</span>
+                        )}
+                        <span className="font-bold text-primary bg-primary/10 px-2 py-1 rounded text-sm">{product.price}</span>
+                      </div>
                     </div>
                     <CardDescription className="text-base">{product.desc}</CardDescription>
                   </CardHeader>
@@ -99,43 +101,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Preview */}
+      {/* Blog CTA Section */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">خدماتنا</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">شراكة معنا لتحويل رؤيتك إلى واقع من خلال تصميم استراتيجي متكامل.</p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">أحدث المقالات</h2>
+                <p className="text-muted-foreground max-w-xl text-lg">نشارك معك خلاصة التجارب والأسرار لتنمو أسرع.</p>
+              </div>
+              <Button asChild variant="link" className="group text-primary">
+                <Link href="/blog" className="flex items-center gap-2">
+                  عرض جميع المقالات
+                  <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredServices.map((service, i) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group relative p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-xl overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-l from-primary to-primary/50 transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                <service.icon className="w-10 h-10 text-primary mb-6" />
-                <h3 className="text-2xl font-bold text-foreground mb-3">{service.name}</h3>
-                <p className="text-muted-foreground mb-8 line-clamp-2">{service.desc}</p>
-                <Button asChild variant="ghost" className="p-0 hover:bg-transparent text-foreground group-hover:text-primary transition-colors">
-                  <Link href="/services" className="flex items-center gap-2">
-                    اعرف المزيد
-                    <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {blogPreviews.map((post, i) => (
+                <motion.div
+                  key={post.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="group relative p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-xl overflow-hidden cursor-pointer"
+                >
+                  <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-l from-primary to-primary/50 transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                  <post.icon className="w-10 h-10 text-primary mb-4" />
+                  <p className="text-xs text-muted-foreground mb-3">{post.date}</p>
+                  <h3 className="text-lg font-bold text-foreground mb-3 leading-snug">{post.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">{post.excerpt}</p>
+                  <Link href="/blog" className="mt-6 flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all">
+                    اقرأ المزيد
+                    <ArrowLeft className="w-4 h-4" />
                   </Link>
-                </Button>
-              </motion.div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-          <div className="mt-16 text-center">
-            <Button asChild variant="outline" size="lg" className="rounded-full px-8 text-base h-14 border-border/60 hover:bg-muted">
-              <Link href="/services">عرض جميع الخدمات</Link>
+          {/* Blog CTA Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12 text-center"
+          >
+            <h2 className="text-3xl font-bold text-foreground mb-4">هل تريد أن تتعلم أكثر؟</h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              مدونتنا مليئة بالمقالات العملية والنصائح الحصرية لمساعدتك على النمو وتحقيق مبيعات أكثر.
+            </p>
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 h-14 text-base">
+              <Link href="/blog">المدونة</Link>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
