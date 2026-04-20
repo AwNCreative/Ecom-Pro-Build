@@ -11,6 +11,7 @@ import Store from "@/pages/store";
 import Blog from "@/pages/blog";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
+import RefundPolicy from "@/pages/refund-policy";
 
 import SmartFoundation from "@/pages/blog/smart-foundation";
 import UxPsychology from "@/pages/blog/ux-psychology";
@@ -45,6 +46,7 @@ function Router() {
         <Route path="/blog/absolute-loyalty" component={AbsoluteLoyalty} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="/terms-of-service" component={TermsOfService} />
+        <Route path="/refund-policy" component={RefundPolicy} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

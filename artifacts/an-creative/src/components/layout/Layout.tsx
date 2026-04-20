@@ -176,6 +176,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-3">
                 <li><Link href="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">سياسة الخصوصية</Link></li>
                 <li><Link href="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">شروط الخدمة</Link></li>
+                <li><Link href="/refund-policy" className="text-muted-foreground hover:text-primary transition-colors">سياسة الاسترداد</Link></li>
                 <li>
                   <a href={SOCIAL.email} className="text-muted-foreground hover:text-primary transition-colors break-all">
                     ahmedosamaqotyifan@gmail.com
@@ -201,10 +202,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <p className="text-sm text-muted-foreground">
               © 2026 A&N Creative. جميع الحقوق محفوظة.
             </p>
-            <div className="flex items-center gap-4 text-sm">
+            <div className="flex items-center gap-4 text-sm flex-wrap justify-center md:justify-end">
               <Link href="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">سياسة الخصوصية</Link>
               <span className="text-border">·</span>
               <Link href="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">شروط الخدمة</Link>
+              <span className="text-border">·</span>
+              <Link href="/refund-policy" className="text-muted-foreground hover:text-primary transition-colors">سياسة الاسترداد</Link>
             </div>
           </div>
         </div>
