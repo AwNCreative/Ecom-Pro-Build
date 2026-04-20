@@ -70,7 +70,7 @@ export default function TermsOfService() {
             <p>
               يُرجى إرسال الأسئلة المتعلقة بشروط الخدمة إلينا على:
               <br />
-              <a href="mailto:legal@ancreative.com" className="font-medium hover:underline">legal@ancreative.com</a>
+              <a href="mailto:ahmedosamaqotyifan@gmail.com" className="font-medium hover:underline">ahmedosamaqotyifan@gmail.com</a>
             </p>
 
           </div>

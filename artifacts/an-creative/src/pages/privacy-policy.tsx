@@ -70,7 +70,7 @@ export default function PrivacyPolicy() {
             <p>
               إذا كانت لديك أسئلة أو تعليقات حول سياسة الخصوصية هذه، يُرجى التواصل معنا على:
               <br />
-              <a href="mailto:privacy@ancreative.com" className="font-medium hover:underline">privacy@ancreative.com</a>
+              <a href="mailto:ahmedosamaqotyifan@gmail.com" className="font-medium hover:underline">ahmedosamaqotyifan@gmail.com</a>
             </p>
 
           </div>
