@@ -113,7 +113,11 @@ function ProductCard() {
           </div>
 
           <div className="mt-auto pt-6">
-            <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full h-14 text-base font-bold shadow-md shadow-primary/20 transition-all hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5">
+            <Button
+              size="lg"
+              onClick={() => window.openSallaSecretsCheckout?.()}
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full h-14 text-base font-bold shadow-md shadow-primary/20 transition-all hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5"
+            >
               <ShoppingBag className="w-5 h-5 ms-2" />
               اشترِ الآن — $10
             </Button>
