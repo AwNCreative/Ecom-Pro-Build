@@ -42,3 +42,6 @@ externalPort = 3000
 [[ports]]
 localPort = 21415
 externalPort = 3002
+
+[nix]
+packages = ["zip"]
